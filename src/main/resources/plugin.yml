@@ -1,0 +1,32 @@
+name: CMLogin
+main: cc.wanforme.cmlogin.CMLogin
+version: "1.0.0"
+api: ["2.0.0"]
+
+# 启动时加载 (对于nsplugin而言，这个顺序已经不重要了)
+load: STARTUP
+
+author: wanne
+description: login plugin for CM
+# to do github address
+website:
+
+# 对于nsplugin而言，这些可能会失效
+softdepend: []
+depend: []
+#prefix: 
+loadbefore: []
+
+
+commands: 
+  login: 
+    description: login
+    usage: "/login {username} {password}"
+    aliases: ["dl"]
+    permission: CMLogin.command.login
+    permission-message: ""
+    
+permissions: 
+  PluginDemo.command.pd: 
+#    description: "pd permission"
+    default: true
