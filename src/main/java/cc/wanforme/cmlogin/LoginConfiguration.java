@@ -7,6 +7,11 @@ import org.springframework.context.annotation.Configuration;
 import cc.wanforme.cmlogin.command.login.LoginCommandHandler;
 import cc.wanforme.cmlogin.command.login.LoginMainCommandHandler;
 
+/**
+ * @author wanne
+ *
+ * 2020年7月24日
+ */
 @Configuration
 public class LoginConfiguration {
 	
@@ -24,6 +29,7 @@ public class LoginConfiguration {
 	}
 
 	// 主程序bean
+	@Bean
 	public CMLogin cmLogin(
 			@Autowired LoginMainCommandHandler loginMainCommandHandler) {
 		CMLogin main = new CMLogin();

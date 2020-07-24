@@ -20,6 +20,11 @@
 			<artifactId>wannukkit-springboot-starter</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>cc.wanforme</groupId>
+			<artifactId>CMCore</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
   </dependencies>
   
 </project>

@@ -28,6 +28,7 @@ public class LoginCommandHandler extends FixedArgumentsHandler{
 		
 		System.out.println(Arrays.toString(args));
 		System.out.println("logined");
+		System.out.println("["+username + "" + password+"]");
 		return false;
 	}
 
