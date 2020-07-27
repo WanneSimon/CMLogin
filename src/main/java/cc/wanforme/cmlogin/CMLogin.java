@@ -16,19 +16,22 @@ public class CMLogin extends MultiCommandPluginBase{
 	
 	@Autowired
 	private LoginMainCommandHandler loginMainCommandHandler;
-//	@Autowired
-//	private LoginLang lang;
+	@Autowired
+	private LoginLang lang;
 	
 	@Override
 	public void onLoad() {
 		super.onLoad();
+		this.saveConfig();
 	}
 	
 	@Override
 	public void onEnable() {
 		super.onEnable();
+		// 启动时，根据配置重新设置语言
+		this.lang.setLang(this.getConfig().getString("lang"));
+		// 注册指令
 		this.initCommands();
-//		this.lang.setLang("zh_CN");
 	}
 	
 	@Override
@@ -40,7 +43,6 @@ public class CMLogin extends MultiCommandPluginBase{
 	private void initCommands() {
 		loginMainCommandHandler.initLoginCommand();
 		this.putMultiCommandHandler("login", loginMainCommandHandler);
-		
 	}
 	
 	

@@ -13,7 +13,7 @@ import cc.wanforme.nukkit.spring.plugins.lang.PluginLangHolder;
 public class LoginLang extends PluginLangHolder{
 
 	public LoginLang() {
-		super(ConfigFileType.YML, "lang", "chs");
+		super(ConfigFileType.YML, "lang", "en");
 	}
 
 	
