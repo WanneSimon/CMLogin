@@ -5,6 +5,8 @@ import java.util.Vector;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import cc.wanforme.cmcore.base.po.User;
+import cc.wanforme.cmcore.base.service.IUserService;
 import cc.wanforme.cmlogin.lang.LoginLang;
 import cc.wanforme.nukkit.spring.plugins.command.FixedArgumentsHandler;
 import cn.nukkit.command.Command;
@@ -23,6 +25,9 @@ public class LoginCommandHandler extends FixedArgumentsHandler{
 	@Autowired
 	private LoginLang lang;
 	
+	@Autowired
+	private IUserService userService;
+	
 	public LoginCommandHandler() {
 		super("{{username}}", "{{password}}");
 	}
@@ -33,13 +38,21 @@ public class LoginCommandHandler extends FixedArgumentsHandler{
 			String username = args[0];
 			String password = args[1];
 			
+			User user = new User();
+			user.setUserName(username);
+			user.setPwd(password);
+			
+			if( userService.loginCheck(user) ) {
+				this.logined((Player)sender);
+				sender.sendMessage(lang.get("login.success"));
+			} else {
+				sender.sendMessage(lang.get("login.fail"));
+			}
 //			System.out.println(Arrays.toString(args));
 //			System.out.println("logined");
 //			System.out.println("["+username + "" + password+"]");
-			
-			this.logined((Player)sender);
 		} else {
-			
+			sender.sendMessage(lang.get("command.only.player.allowed"));
 		}
 		return true;
 	}
