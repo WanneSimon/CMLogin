@@ -17,14 +17,15 @@ public class CMLogin extends MultiCommandPluginBase{
 	
 	@Autowired
 	private LoginMainCommandHandler loginMainCommandHandler;
-//	@Autowired
+	@Autowired
 	private LoginLang lang;
 	
 	@Override
 	public void onLoad() {
 		super.onLoad();
 		this.saveConfig();
-		this.lang = new LoginLang(this, ConfigFileType.YML, this.getDataFolder().getName() + "/lang/", "en");
+		this.lang.init(true);
+//		this.lang = new LoginLang(this, ConfigFileType.YML, "lang", "en");
 	}
 	
 	@Override

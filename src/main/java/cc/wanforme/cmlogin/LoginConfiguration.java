@@ -44,9 +44,9 @@ public class LoginConfiguration {
 //	
 	
 	// 语言文件
-//	@Bean
-//	public LoginLang loginLang(@Autowired CMLogin cmlogin) {
-//		LoginLang lang = new LoginLang(cmlogin, ConfigFileType.YML, cmlogin.getDataFolder().getName()+"/lang/", "en");
-//		return lang;
-//	}
+	@Bean
+	public LoginLang loginLang(@Autowired CMLogin cmlogin) {
+		LoginLang lang = new LoginLang(cmlogin, ConfigFileType.YML, "lang", "en");
+		return lang;
+	}
 }
