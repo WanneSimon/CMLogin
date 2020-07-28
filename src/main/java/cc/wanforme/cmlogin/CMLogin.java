@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import cc.wanforme.cmlogin.command.login.LoginMainCommandHandler;
 import cc.wanforme.cmlogin.lang.LoginLang;
 import cc.wanforme.nukkit.spring.plugins.command.MultiCommandPluginBase;
+import cc.wanforme.nukkit.spring.plugins.lang.ConfigFileType;
 
 /**
  * @author wanne
@@ -16,13 +17,14 @@ public class CMLogin extends MultiCommandPluginBase{
 	
 	@Autowired
 	private LoginMainCommandHandler loginMainCommandHandler;
-	@Autowired
+//	@Autowired
 	private LoginLang lang;
 	
 	@Override
 	public void onLoad() {
 		super.onLoad();
 		this.saveConfig();
+		this.lang = new LoginLang(this, ConfigFileType.YML, this.getDataFolder().getName() + "/lang/", "en");
 	}
 	
 	@Override
@@ -45,5 +47,7 @@ public class CMLogin extends MultiCommandPluginBase{
 		this.putMultiCommandHandler("login", loginMainCommandHandler);
 	}
 	
-	
+	public LoginLang getLang() {
+		return lang;
+	}
 }

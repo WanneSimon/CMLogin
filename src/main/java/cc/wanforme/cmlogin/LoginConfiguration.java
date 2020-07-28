@@ -1,8 +1,13 @@
 package cc.wanforme.cmlogin;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import cc.wanforme.cmlogin.lang.LoginLang;
+import cc.wanforme.nukkit.spring.plugins.lang.ConfigFileType;
 
 //import cc.wanforme.cmlogin.command.login.LoginCommandHandler;
 //import cc.wanforme.cmlogin.command.login.LoginMainCommandHandler;
@@ -38,4 +43,10 @@ public class LoginConfiguration {
 //	}
 //	
 	
+	// 语言文件
+//	@Bean
+//	public LoginLang loginLang(@Autowired CMLogin cmlogin) {
+//		LoginLang lang = new LoginLang(cmlogin, ConfigFileType.YML, cmlogin.getDataFolder().getName()+"/lang/", "en");
+//		return lang;
+//	}
 }
