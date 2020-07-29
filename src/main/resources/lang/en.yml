@@ -10,12 +10,12 @@ login:
   player:
     creating: creating new player...
     created: player created
-    
+  notLogin: You are not logged in yet. use /login to login.
 
 register:
   information.invalid: invalid information to register
   username:
     tooShort: the username is too short, 4-character at least！
-    existed: the username has been registered, please login.
+    existed: the username has been registered, please login first.
   password.tooShort: the pasword is too short , 6-character at least！
   success: register successfully

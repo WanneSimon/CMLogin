@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import cc.wanforme.cmlogin.command.login.LoginCommand;
 import cc.wanforme.cmlogin.command.register.RegisterCommand;
 import cc.wanforme.cmlogin.lang.LoginLang;
+import cc.wanforme.cmlogin.task.LoginTask;
 import cc.wanforme.nukkit.spring.plugins.command.NSPluginBase;
 
 /**
@@ -21,6 +22,8 @@ public class CMLogin extends NSPluginBase{
 	private RegisterCommand registerCommand;
 	@Autowired
 	private LoginLang lang;
+	@Autowired
+	private LoginTask task;
 	
 	@Override
 	public void onLoad() {
@@ -37,6 +40,9 @@ public class CMLogin extends NSPluginBase{
 		this.lang.setLang(this.getConfig().getString("lang"));
 		// 注册指令
 		this.initCommands();
+		// 启动定时任务
+		int period = this.getConfig().getInt("login.tick", 60);
+		this.getServer().getScheduler().scheduleRepeatingTask(this, task, period);
 	}
 	
 	@Override

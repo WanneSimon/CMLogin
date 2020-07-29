@@ -10,7 +10,7 @@ login:
   player:
     creating: 新建角色中...
     created: 角色建立完成
-    
+  notLogin: 您还未登录，请先使用 /login 登录！
 
 register:
   information.invalid: 注册信息无效

@@ -1,11 +1,8 @@
 package cc.wanforme.cmlogin.command.login;
 
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Vector;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -13,7 +10,6 @@ import cc.wanforme.cmcore.base.po.NPlayer;
 import cc.wanforme.cmcore.base.po.User;
 import cc.wanforme.cmcore.base.service.INPlayerService;
 import cc.wanforme.cmcore.base.service.IUserService;
-import cc.wanforme.cmlogin.command.register.RegisterCommandHandler;
 import cc.wanforme.cmlogin.lang.LoginLang;
 import cc.wanforme.nukkit.spring.plugins.command.FixedArgumentsHandler;
 import cn.nukkit.command.Command;
@@ -26,7 +22,6 @@ import cn.nukkit.player.Player;
  */
 @Component
 public class LoginCommandHandler extends FixedArgumentsHandler{
-	private static final Logger log = LoggerFactory.getLogger(RegisterCommandHandler.class);
 	
 	private volatile Vector<Player> notLogin = new Vector<>(10);
 	
@@ -115,4 +110,7 @@ public class LoginCommandHandler extends FixedArgumentsHandler{
 		notLogin.remove(player);
 	}
 	
+	public Vector<Player> getNotLogin() {
+		return notLogin;
+	}
 }
