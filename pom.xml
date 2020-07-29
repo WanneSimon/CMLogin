@@ -17,7 +17,7 @@
   <dependencies>
 		<dependency>
 			<groupId>cc.wanforme.nukkit</groupId>
-			<artifactId>wannukkit-springboot-starter</artifactId>
+			<artifactId>wannukkit-spring-boot-starter</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
