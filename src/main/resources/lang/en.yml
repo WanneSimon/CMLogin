@@ -1,6 +1,6 @@
 command:
-	only.player.allowed: only player allowed 
+   only.player.allowed: only player allowed 
 
 login:
-	success: login successful
-	fail: login failed, check your username and password
+   success: login successful
+   fail: login failed, check your username and password
