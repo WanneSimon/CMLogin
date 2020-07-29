@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import cc.wanforme.cmlogin.command.login.LoginCommand;
+import cc.wanforme.cmlogin.command.register.RegisterCommand;
 import cc.wanforme.cmlogin.lang.LoginLang;
 import cc.wanforme.nukkit.spring.plugins.command.NSPluginBase;
 
@@ -15,7 +16,9 @@ import cc.wanforme.nukkit.spring.plugins.command.NSPluginBase;
 public class CMLogin extends NSPluginBase{
 	
 	@Autowired
-	private LoginCommand loginMainCommandHandler;
+	private LoginCommand loginCommand;
+	@Autowired
+	private RegisterCommand registerCommand;
 	@Autowired
 	private LoginLang lang;
 	
@@ -24,9 +27,7 @@ public class CMLogin extends NSPluginBase{
 		super.onLoad();
 //		this.saveConfig(); // 该方法失效了
 		this.saveResource("config.yml");
-//		this.saveResource("test.txt");
 		this.lang.init(true);
-//		this.lang = new LoginLang(this, ConfigFileType.YML, "lang", "en");
 	}
 	
 	@Override
@@ -45,10 +46,8 @@ public class CMLogin extends NSPluginBase{
 	
 	/**初始化所有指令*/
 	private void initCommands() {
-//		loginMainCommandHandler.initLoginCommand();
-		this.putMultiCommandHandler("login", loginMainCommandHandler);
-		
-		
+		this.registerNSCommand("login", loginCommand);
+		this.registerNSCommand("register", registerCommand);
 	}
 	
 	public LoginLang getLang() {

@@ -25,8 +25,17 @@ commands:
     aliases: ["dl"]
     permission: CMLogin.command.login
     permission-message: ""
+  register: 
+    description: register account
+    usage: "/register {username} {password}"
+    aliases: ["zc"]
+    permission: CMLogin.command.register
+    permission-message: ""
     
 permissions: 
-  PluginDemo.command.pd: 
+  CMLogin.command.login: 
+#    description: "pd permission"
+    default: true
+  CMLogin.command.register: 
 #    description: "pd permission"
     default: true

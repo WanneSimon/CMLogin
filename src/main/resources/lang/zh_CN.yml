@@ -1,6 +1,21 @@
 command:
   only.player.allowed: 仅 Player 可使用
-
+  
 login:
   success: 登录成功
   fail: 登录失败，请检查用户名和密码
+  username:
+    notExisted: 用户名不存在
+    existed: 此玩家名已被注册，请更换你的名字！
+  player:
+    creating: 新建角色中...
+    created: 角色建立完成
+    
+
+register:
+  information.invalid: 注册信息无效
+  username:
+    tooShort: 用户名太短，至少需要4个字符！
+    existed: 用户名已注册！请登录。
+  password.tooShort: 密码太短，至少需要6个字符！
+  success: 注册成功！
