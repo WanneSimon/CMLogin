@@ -45,8 +45,10 @@ public class CMLogin extends NSPluginBase{
 	
 	/**初始化所有指令*/
 	private void initCommands() {
-		loginMainCommandHandler.initLoginCommand();
+//		loginMainCommandHandler.initLoginCommand();
 		this.putMultiCommandHandler("login", loginMainCommandHandler);
+		
+		
 	}
 	
 	public LoginLang getLang() {

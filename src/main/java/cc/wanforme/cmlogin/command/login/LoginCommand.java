@@ -20,8 +20,10 @@ public class LoginCommand extends NSCommand{
 //		this.initLoginCommand();
 	}
 	
+	
 	/** 初始化所有命令*/
-	public void initLoginCommand() {
+	@Override
+	protected void initCommand() {
 //		this.addFixedArgumentsHandler(new LoginCommandHandler( this, "{{username}}", "{{password}}"));
 		this.addFixedArgumentsHandler(loginCommandHandler);
 	}
