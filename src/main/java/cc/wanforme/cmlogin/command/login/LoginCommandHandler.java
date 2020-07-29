@@ -1,6 +1,5 @@
 package cc.wanforme.cmlogin.command.login;
 
-import java.util.Arrays;
 import java.util.Vector;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,9 +34,6 @@ public class LoginCommandHandler extends FixedArgumentsHandler{
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-		System.out.println(Arrays.toString(args));
-		System.out.println("logined");
-//			System.out.println("["+username + "" + password+"]");
 		if(sender.isPlayer()) {
 			String username = args[0];
 			String password = args[1];

@@ -3,19 +3,19 @@ package cc.wanforme.cmlogin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import cc.wanforme.cmlogin.command.login.LoginMainCommandHandler;
+import cc.wanforme.cmlogin.command.login.LoginCommand;
 import cc.wanforme.cmlogin.lang.LoginLang;
-import cc.wanforme.nukkit.spring.plugins.command.MultiCommandPluginBase;
+import cc.wanforme.nukkit.spring.plugins.command.NSPluginBase;
 
 /**
  * @author wanne
  * 2020年7月22日
  */
 @Component
-public class CMLogin extends MultiCommandPluginBase{
+public class CMLogin extends NSPluginBase{
 	
 	@Autowired
-	private LoginMainCommandHandler loginMainCommandHandler;
+	private LoginCommand loginMainCommandHandler;
 	@Autowired
 	private LoginLang lang;
 	

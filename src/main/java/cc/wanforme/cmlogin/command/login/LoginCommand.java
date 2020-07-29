@@ -3,19 +3,19 @@ package cc.wanforme.cmlogin.command.login;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import cc.wanforme.nukkit.spring.plugins.command.MultiCommandHandler;
+import cc.wanforme.nukkit.spring.plugins.command.NSCommand;
 
 /** 登录处理器
  * @author wanne
  * 2020年7月22日
  */
 @Component
-public class LoginMainCommandHandler extends MultiCommandHandler{
+public class LoginCommand extends NSCommand{
 	
 	@Autowired
 	private LoginCommandHandler loginCommandHandler;
 	
-	public LoginMainCommandHandler() {
+	public LoginCommand() {
 		super("login");
 //		this.initLoginCommand();
 	}
