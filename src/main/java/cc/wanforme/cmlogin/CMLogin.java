@@ -59,4 +59,14 @@ public class CMLogin extends NSPluginBase{
 	public LoginLang getLang() {
 		return lang;
 	}
+	
+	/** 检查是否包含某个指令*/
+	public boolean containCommand(String name) {
+		name = name.trim();
+		if(name.startsWith("/")) {
+			return this.mainCommands.containsKey(name.substring(1,name.length()));
+		}
+		return this.mainCommands.containsKey(name);
+	}
+	
 }
