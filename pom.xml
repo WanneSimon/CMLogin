@@ -33,6 +33,21 @@
         </repository>
     </repositories>
 
+	<!-- 项目发布管理 -->
+	<distributionManagement>
+	  <repository>
+	    <id>releases</id>
+	    <name>User Project Release</name>
+	    <url>http://www.repo.wanforme.cc/repository/maven-releases/</url>
+	  </repository>
+	 
+	  <snapshotRepository>
+	    <id>snapshots</id>
+	    <name>User Project SNAPSHOTS</name>
+	    <url>http://www.repo.wanforme.cc/repository/maven-snapshots/</url>
+	  </snapshotRepository>
+	</distributionManagement>
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
